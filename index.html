@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Editor de memes</title>
+</head>
+
+<body class="light-theme"> <!-- Dejar momentaneamente esta clase -->
+    <header>
+        <h1>Generador de memes</h1>
+        <div class="buttons-container">
+            <button><i class="fa-solid fa-image"></i> Imagen</button>
+            <button><i class="fa-solid fa-font"></i> Texto</button>
+            <button><i class="fa-solid fa-lightbulb"></i> Modo Oscuro</button>
+        </div>
+    </header>
+    <main class="meme-container">
+        <div class="canvas-meme">
+            <p id="top-text" class="text-meme">TOP TEXT</p>
+            <div id="image-meme"></div>
+            <p id="bottom-text" class="text-meme">BOTTOM TEXT</p>
+        </div>
+        <button><i class="fa-solid fa-download"></i> Descargar</button>
+    </main>
+    <aside class="panel-oculto">
+        <!-- *************************************************
+                                IMG PANEL
+        ****************************************************** -->
+        <section class="panel-img">
+            <h2>IMAGEN</h2>
+            <div class="panel-control">
+                <h3>URL</h3>
+                <input type="text" id="url-img-input">
+            </div>
+            <div class="panel-control">
+                <h3>FONDO</h3>
+            </div>
+       <!-- ****************************(FILTROS)************************************** -->
+            <div class="panel-control">
+                <h3>FILTROS</h3>
+                <div class="panel-control-slider">
+                    <label for="brillo-slider">BRILLO</label>
+                    <input type="range" id="brillo-slider" min="0" max="1" step="0.1">
+                </div>
+                <div class="panel-control-slider">
+                    <label for="opacidad-slider">OPACIDAD</label>
+                    <input type="range" id="opacidad-slider" min="0" max="1" step="0.1">
+                </div>
+                <div class="panel-control-slider">
+                    <label for="contraste-slider">CONTRASTE</label>
+                    <input type="range" id="contraste-slider" min="0" max="1" step="0.1">
+                </div>
+                <div class="panel-control-slider">
+                    <label for="desenfoque-slider">DESENFOQUE</label>
+                    <input type="range" id="desenfoque-slider" min="0" max="1" step="0.1">
+                </div>
+                <div class="panel-control-slider">
+                    <label for="grises-slider">ESCALA DE GRISES</label>
+                    <input type="range" id="grises-slider" min="0" max="1" step="0.1">
+                </div>
+                <div class="panel-control-slider">
+                    <label for="sepia-slider">SEPIA</label>
+                    <input type="range" id="sepia-slider" min="0" max="1" step="0.1">
+                </div>
+                <div class="panel-control-slider">
+                    <label for="hue-slider">HUE</label>
+                    <input type="range" id="hue-slider" min="0" max="1" step="0.1">
+                </div>
+                <div class="panel-control-slider">
+                    <label for="saturado-slider">SATURADO</label>
+                    <input type="range" id="saturado-slider" min="0" max="1" step="0.1">
+                </div>
+                <div class="panel-control-slider">
+                    <label for="negativo-slider">NEGATIVO</label>
+                    <input type="range" id="negativo-slider" min="0" max="1" step="0.1">
+                </div>
+            </div>
+            
+        </section>
+        <!-- ********************************************
+                        TEXT PANEL
+        ******************************************** -->
+        <section class="panel-text">
+            <h2>TEXTO</h2>
+            <div class="panel-control">
+                <h3>SUPERIOR</h3>
+                <textarea name="" id="top-text-input" cols="30" rows="2">TOP TEXT</textarea>
+                <div>
+                    <input type="checkbox" id="no-top-text-checkbox">
+                    <label for="no-top-text-checkbox">Sin texto superior</label>
+                </div>
+            </div>
+            <div class="panel-control">
+                <h3>INFERIOR</h3>
+                <textarea name="" id="bottom-text-input" cols="30" rows="2">BOTTOM TEXT</textarea>
+                <div>
+                    <input type="checkbox" id="no-bottom-text-checkbox">
+                    <label for="no-bottom-text-checkbox">Sin texto inferior</label>
+                </div>
+            </div>
+            <div class="panel-control">
+                <h3>FUENTE</h3>
+                <select name="font-family" id="text-font-select">
+                    <option value="">Arial</option>
+                    <option value="">Arial Black</option>
+                    <option value="">American Typewriter</option>
+                    <option value="">Andale Mono</option>
+                    <option value="">Comic Sans MS</option>
+                    <option value="">Helvetica</option>
+                    <option value="">Impact</option>
+                    <option value="">Verdana</option>
+                    <option value="">Times New Roman</option>
+                </select>
+                <input type="number" min="12" max="100">
+                <div>
+                    <button id="text-left-align-button"><i class="fa-solid fa-align-left"></i></button>
+                    <button id="text-center-align-button"><i class="fa-solid fa-align-center"></i></button>
+                    <button id="text-right-align-button"><i class="fa-solid fa-align-right"></i></button>
+                </div>
+            </div>
+
+            <!-- ******************COLOR************************* -->
+            <div class="panel-control">
+                <div>
+                    <h3>COLOR</h3>
+                    <input type="color" id="text-color-input" value="#000000">
+                    <span id="text-color">#000000</span>
+                    <h3>FONDO</h3>
+                    <input type="color" id="text-background-color-input" value="#FFFFFF">
+                    <span id="text-background-color">#FFFFFF</span>
+                </div>
+                <div>
+                    <input type="checkbox">
+                </div>
+            </div>
+            <div class="panel-control">
+                <h3>CONTORNO</h3>
+                <div class="buttons-container">
+                    <button>Ninguno</button>
+                    <button>Claro</button>
+                    <button>Oscuro</button>
+                </div>
+            </div>
+            <div class="panel-control">
+                <h3>ESPACIADO</h3>
+                <input type="number" min="10" max="50" value="35">
+            </div>
+            <div class="panel-control">
+                <h3>INTERLINEADO</h3>
+                <select name="" id="">
+                    <option value="0.8">0.8</option>
+                    <option value="1">1</option>
+                    <option value="1.2">1.2</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+                </select>
+            </div>
+        </section>
+    </aside>
+
+<script src="main.js"></script>
+</body>
+
+</html>

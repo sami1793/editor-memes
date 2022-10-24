@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /*se desplaza suavemente*/
+}
+
+/* ************ MODO OSCURO ***************** */
+body.dark-theme{
+    --color-header: #191e2b;
+}
+
+/* ************ MODO CLARO ***************** */
+body.light-theme {
+    --color-header: #e0e0e0;
+}
+
+body{
+    /* display: flex;
+    flex-direction: column;
+     align-items: center;  */
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    gap: 15px;
+    background-color: var(--color-header);
+}
+
+.meme-container{
+    display: flex;
+    flex-direction: column;
+
+}
+.canvas-meme{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    max-width: 610px;
+    height: 610px;
+}
+.text-meme{
+    color: black;
+    background-color: white;
+}
+#image-meme{
+    width: 100%;
+    height: 100%;
+}
+.panel-img{
+    background-color: aliceblue;
+}
+.panel-text{
+    background-color: lightgoldenrodyellow;
+}
