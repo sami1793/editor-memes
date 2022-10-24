@@ -8,17 +8,20 @@
 /* ************ MODO OSCURO ***************** */
 body.dark-theme{
     --color-header: #191e2b;
+    --color-background: #30343f;
 }
 
 /* ************ MODO CLARO ***************** */
 body.light-theme {
     --color-header: #e0e0e0;
+    --color-background: #eeeeee;
 }
 
 body{
+    background-color: var(--color-background);
     /* display: flex;
     flex-direction: column;
-     align-items: center;  */
+    align-items: center; */
 }
 
 header{
@@ -33,26 +36,38 @@ header{
 .meme-container{
     display: flex;
     flex-direction: column;
-
+    align-items: center;
+    gap: 15px;
 }
 .canvas-meme{
     display: flex;
     flex-direction: column;
     background-color: black;
+    width: 100%;  /* si no lo pongo queda del tamaño del texto */
     max-width: 610px;
-    height: 610px;
+    height: 80vh;
+    max-height: 610px;
+    /* margin: auto; */
 }
+
+#image-meme{
+    width: 100%;
+    height: 100%;/* flex-grow: 1; */
+}
+
 .text-meme{
     color: black;
     background-color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2em;
+    font-weight:900;
+    text-align: center;
+    padding: 15px;
 }
-#image-meme{
-    width: 100%;
-    height: 100%;
-}
+/*
 .panel-img{
     background-color: aliceblue;
 }
 .panel-text{
     background-color: lightgoldenrodyellow;
-}
+} */
