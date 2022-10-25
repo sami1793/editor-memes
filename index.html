@@ -42,6 +42,18 @@
             </div>
             <div class="panel-control">
                 <h3>FONDO</h3>
+                <div class="panel-control">
+                    <input type="color" id="background-meme-color-input" value="#000000">
+                    <span id="background-meme-color">#000000</span>
+                    <select name="" id="background-meme-select">
+                        <option value="">Ninguno</option>
+                        <option value="">Aclarar</option>
+                        <option value="">Oscurecer</option>
+                        <option value="">Diferencia</option>
+                        <option value="">Luminosidad</option>
+                        <option value="">Multiplicar</option>
+                    </select>
+                </div>
             </div>
        <!-- ****************************(FILTROS)************************************** -->
             <div class="panel-control">
@@ -83,7 +95,7 @@
                     <input type="range" id="negativo-slider" min="0" max="1" step="0.1">
                 </div>
             </div>
-            
+            <button class="button button-default" id="default-filters-button">Reestablecer filtros</button>
         </section>
         <!-- ********************************************
                         TEXT PANEL
@@ -119,7 +131,7 @@
                     <option value="">Verdana</option>
                     <option value="">Times New Roman</option>
                 </select>
-                <input type="number" min="12" max="100">
+                <input type="number" id="text-size-input" min="12" max="100" value="38">
                 <div>
                     <button id="text-left-align-button"><i class="fa-solid fa-align-left"></i></button>
                     <button id="text-center-align-button"><i class="fa-solid fa-align-center"></i></button>
@@ -138,7 +150,8 @@
                     <span id="text-background-color">#FFFFFF</span>
                 </div>
                 <div>
-                    <input type="checkbox">
+                    <input type="checkbox" id="transparent-background-checkbox">
+                    <label for="transparent-background-checkbox">Fondo transparente</label>
                 </div>
             </div>
             <div class="panel-control">

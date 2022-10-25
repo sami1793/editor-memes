@@ -1,10 +1,15 @@
 let $ = (selector) => document.querySelector(selector)
-
+let $$ = (selector) => document.querySelectorAll(selector)
 
 // #################### IMAGEN ########################
 
 
 let urlImgInput = $('#url-img-input')
+
+$('#url-img-input').addEventListener('input', (event)=>{
+    $('#image-meme').style.backgroundImage=`url("${event.target.value}")`;
+})
+
 
 
 // #################### TEXTO ########################
@@ -52,15 +57,24 @@ let textColor = $('#text-color')
 let textBackgroundColor = $('#text-background-color')
 
 textColorInput.addEventListener('input', (event) => {
-    topText.style.color = event.target.value;
-    bottomText.style.color = event.target.value;
+    $('#top-text').style.color = event.target.value;
+    $('#bottom-text').style.color = event.target.value;
 
     textColor.innerText = event.target.value;
 })
 
 textBackgroundColorInput.addEventListener('input', (event) =>{
+    $('#top-text').style.backgroundColor = event.target.value;
+    $('#bottom-text').style.backgroundColor = event.target.value;
 
     textBackgroundColor.innerText = event.target.value;
+})
+
+//Cambiar tamaño texto
+
+$("#text-size-input").addEventListener('input',(event)=>{
+    $('#top-text').style.fontSize=`${event.target.value}px`;
+    $('#bottom-text').style.fontSize=`${event.target.value}px`;
 })
 
 
