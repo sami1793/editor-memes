@@ -45,7 +45,7 @@ header{
     background-color: black;
     width: 100%;  /* si no lo pongo queda del tamaño del texto */
     max-width: 610px;
-    height: 80vh;
+    height: 610px;
     max-height: 610px;
     /* margin: auto; */
 }

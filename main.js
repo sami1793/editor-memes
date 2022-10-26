@@ -6,10 +6,24 @@ let $$ = (selector) => document.querySelectorAll(selector)
 
 let urlImgInput = $('#url-img-input')
 
+//Insertar Imagen
 $('#url-img-input').addEventListener('input', (event)=>{
     $('#image-meme').style.backgroundImage=`url("${event.target.value}")`;
 })
 
+//Cambiar color fondo
+$('#background-meme-color-input').addEventListener('input', (event)=>{
+    $('#image-meme').style.backgroundColor=event.target.value;
+    $('#background-meme-color').innerText = event.target.value;
+})
+
+// -------------(FILTROS)-------------------
+
+//Brillo
+$('#brillo-slider-input').addEventListener('input', (event)=>{
+    $('#image-meme').style.filter = `brightness(${event.target.value})`;
+    // alert(event.target.value)
+})
 
 
 // #################### TEXTO ########################
