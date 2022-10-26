@@ -22,9 +22,39 @@ $('#background-meme-color-input').addEventListener('input', (event)=>{
 //Brillo
 $('#brillo-slider-input').addEventListener('input', (event)=>{
     $('#image-meme').style.filter = `brightness(${event.target.value})`;
-    // alert(event.target.value)
 })
-
+//Opacidad
+$('#opacidad-slider-input').addEventListener('input', (event)=>{
+    $('#image-meme').style.filter = `opacity(${event.target.value})`;
+})
+//Contraste
+$('#contraste-slider-input').addEventListener('input', (event)=>{
+    $('#image-meme').style.filter = `contrast(${event.target.value}%)`;
+})
+//Desenfoque
+$('#desenfoque-slider-input').addEventListener('input', (event)=>{
+    $('#image-meme').style.filter = `blur(${event.target.value}px)`;
+})
+//Escala de grises
+$('#grises-slider-input').addEventListener('input', (event)=>{
+    $('#image-meme').style.filter = `grayscale(${event.target.value}%)`;
+})
+//Sepia
+$('#sepia-slider-input').addEventListener('input', (event)=>{
+    $('#image-meme').style.filter = `sepia(${event.target.value}%)`;
+})
+//Hue
+$('#hue-slider-input').addEventListener('input', (event)=>{
+    $('#image-meme').style.filter = `hue-rotate(${event.target.value}deg)`;
+})
+//Saturado
+$('#saturado-slider-input').addEventListener('input', (event)=>{
+    $('#image-meme').style.filter = `saturate(${event.target.value}%)`;
+})
+//Negativo
+$('#negativo-slider-input').addEventListener('input', (event)=>{
+    $('#image-meme').style.filter = `invert(${event.target.value})`;
+})
 
 // #################### TEXTO ########################
 
