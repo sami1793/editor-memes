@@ -19,6 +19,28 @@ $('#background-meme-color-input').addEventListener('input', (event)=>{
 
 // -------------(FILTROS)-------------------
 
+const reestablecerFiltros = () =>{
+    $('#image-meme').style.filter = `brightness(0)`; 
+    $('#image-meme').style.filter = `opacity(0)`;
+    $('#image-meme').style.filter = `contrast(100%)`;
+    $('#image-meme').style.filter = `blur(0px)`;
+    $('#image-meme').style.filter = `grayscale(0%)`;
+    $('#image-meme').style.filter = `sepia(0%)`;
+    $('#image-meme').style.filter = `hue-rotate(0deg)`;
+    $('#image-meme').style.filter = `saturate(100%)`;
+    $('#image-meme').style.filter = `invert(0)`;
+
+    $('#brillo-slider-input').value = 1; 
+    $('#opacidad-slider-input').value = 1;
+    $('#contraste-slider-input').value = 100;
+    $('#desenfoque-slider-input').value = 0;
+    $('#grises-slider-input').value = 0;
+    $('#sepia-slider-input').value = 0;
+    $('#hue-slider-input').value = 0;
+    $('#saturado-slider-input').value = 100;
+    $('#negativo-slider-input').value = 0;
+}
+
 //Brillo
 $('#brillo-slider-input').addEventListener('input', (event)=>{
     $('#image-meme').style.filter = `brightness(${event.target.value})`;
@@ -55,6 +77,10 @@ $('#saturado-slider-input').addEventListener('input', (event)=>{
 $('#negativo-slider-input').addEventListener('input', (event)=>{
     $('#image-meme').style.filter = `invert(${event.target.value})`;
 })
+
+//Reestablecer filtros
+$('#default-filters-button').addEventListener('click', reestablecerFiltros)
+
 
 // #################### TEXTO ########################
 
