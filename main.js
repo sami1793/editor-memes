@@ -41,41 +41,57 @@ const reestablecerFiltros = () =>{
     $('#negativo-slider-input').value = 0;
 }
 
+const ActualizarFiltros = () =>{
+    let brillo = $('#brillo-slider-input').value; 
+    let opacidad = $('#opacidad-slider-input').value;
+    let contraste = $('#contraste-slider-input').value;
+    let desenfoque = $('#desenfoque-slider-input').value;
+    let grises = $('#grises-slider-input').value;
+    let sepia = $('#sepia-slider-input').value;
+    let hue = $('#hue-slider-input').value;
+    let saturado = $('#saturado-slider-input').value;
+    let negativo = $('#negativo-slider-input').value;
+
+    $('#image-meme').style.filter = `brightness(${brillo}) opacity(${opacidad}) contrast(${contraste}%)
+    blur(${desenfoque}px) grayscale(${grises}%) sepia(${sepia}%) hue-rotate(${hue}deg)
+    saturate(${saturado}%) invert(${negativo})`;
+}
+
 //Brillo
 $('#brillo-slider-input').addEventListener('input', (event)=>{
-    $('#image-meme').style.filter = `brightness(${event.target.value})`;
+    ActualizarFiltros();
 })
 //Opacidad
 $('#opacidad-slider-input').addEventListener('input', (event)=>{
-    $('#image-meme').style.filter = `opacity(${event.target.value})`;
+    ActualizarFiltros();
 })
 //Contraste
 $('#contraste-slider-input').addEventListener('input', (event)=>{
-    $('#image-meme').style.filter = `contrast(${event.target.value}%)`;
+    ActualizarFiltros();
 })
 //Desenfoque
 $('#desenfoque-slider-input').addEventListener('input', (event)=>{
-    $('#image-meme').style.filter = `blur(${event.target.value}px)`;
+    ActualizarFiltros();
 })
 //Escala de grises
 $('#grises-slider-input').addEventListener('input', (event)=>{
-    $('#image-meme').style.filter = `grayscale(${event.target.value}%)`;
+    ActualizarFiltros();
 })
 //Sepia
 $('#sepia-slider-input').addEventListener('input', (event)=>{
-    $('#image-meme').style.filter = `sepia(${event.target.value}%)`;
+    ActualizarFiltros();
 })
 //Hue
 $('#hue-slider-input').addEventListener('input', (event)=>{
-    $('#image-meme').style.filter = `hue-rotate(${event.target.value}deg)`;
+    ActualizarFiltros();
 })
 //Saturado
 $('#saturado-slider-input').addEventListener('input', (event)=>{
-    $('#image-meme').style.filter = `saturate(${event.target.value}%)`;
+    ActualizarFiltros();
 })
 //Negativo
 $('#negativo-slider-input').addEventListener('input', (event)=>{
-    $('#image-meme').style.filter = `invert(${event.target.value})`;
+    ActualizarFiltros();
 })
 
 //Reestablecer filtros
