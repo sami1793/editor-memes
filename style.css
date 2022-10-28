@@ -71,3 +71,7 @@ header{
 .panel-text{
     background-color: lightgoldenrodyellow;
 }
+
+.ocultar{
+    display: none;
+}

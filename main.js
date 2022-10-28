@@ -1,10 +1,8 @@
 let $ = (selector) => document.querySelector(selector)
 let $$ = (selector) => document.querySelectorAll(selector)
 
-// #################### IMAGEN ########################
+// ####################### [ IMAGEN ] ###############################
 
-
-let urlImgInput = $('#url-img-input')
 
 //Insertar Imagen
 $('#url-img-input').addEventListener('input', (event)=>{
@@ -18,6 +16,22 @@ $('#background-meme-color-input').addEventListener('input', (event)=>{
 })
 
 // -------------(FILTROS)-------------------
+
+const ActualizarFiltros = () =>{
+    let brillo = $('#brillo-slider-input').value; 
+    let opacidad = $('#opacidad-slider-input').value;
+    let contraste = $('#contraste-slider-input').value;
+    let desenfoque = $('#desenfoque-slider-input').value;
+    let grises = $('#grises-slider-input').value;
+    let sepia = $('#sepia-slider-input').value;
+    let hue = $('#hue-slider-input').value;
+    let saturado = $('#saturado-slider-input').value;
+    let negativo = $('#negativo-slider-input').value;
+
+    $('#image-meme').style.filter = `brightness(${brillo}) opacity(${opacidad}) contrast(${contraste}%)
+    blur(${desenfoque}px) grayscale(${grises}%) sepia(${sepia}%) hue-rotate(${hue}deg)
+    saturate(${saturado}%) invert(${negativo})`;
+}
 
 const reestablecerFiltros = () =>{
     $('#image-meme').style.filter = `brightness(0)`; 
@@ -39,22 +53,6 @@ const reestablecerFiltros = () =>{
     $('#hue-slider-input').value = 0;
     $('#saturado-slider-input').value = 100;
     $('#negativo-slider-input').value = 0;
-}
-
-const ActualizarFiltros = () =>{
-    let brillo = $('#brillo-slider-input').value; 
-    let opacidad = $('#opacidad-slider-input').value;
-    let contraste = $('#contraste-slider-input').value;
-    let desenfoque = $('#desenfoque-slider-input').value;
-    let grises = $('#grises-slider-input').value;
-    let sepia = $('#sepia-slider-input').value;
-    let hue = $('#hue-slider-input').value;
-    let saturado = $('#saturado-slider-input').value;
-    let negativo = $('#negativo-slider-input').value;
-
-    $('#image-meme').style.filter = `brightness(${brillo}) opacity(${opacidad}) contrast(${contraste}%)
-    blur(${desenfoque}px) grayscale(${grises}%) sepia(${sepia}%) hue-rotate(${hue}deg)
-    saturate(${saturado}%) invert(${negativo})`;
 }
 
 //Brillo
@@ -94,44 +92,57 @@ $('#negativo-slider-input').addEventListener('input', (event)=>{
     ActualizarFiltros();
 })
 
-//Reestablecer filtros
+//----Reestablecer filtros-----
 $('#default-filters-button').addEventListener('click', reestablecerFiltros)
 
 
 // #################### TEXTO ########################
 
-let topText = $('#top-text')
-let topTextInput = $('#top-text-input')
-
-let bottomText = $('#bottom-text')
-let bottomTextInput = $('#bottom-text-input')
-
-topTextInput.addEventListener('input', (event) => {
-    topText.innerText = event.target.value
+//Actializa texto superior
+$('#top-text-input').addEventListener('input', (event) => {
+    $('#top-text').innerText = event.target.value
 })
 
-bottomTextInput.addEventListener('input', (event) =>{
-    bottomText.innerText = event.target.value
+//Actualiza texto inferior
+$('#bottom-text-input').addEventListener('input', (event) =>{
+    $('#bottom-text').innerText = event.target.value
 })
+
+//Eliminar texto superior
+$('#no-top-text-checkbox').addEventListener('input', (event)=>{
+    if($('#no-top-text-checkbox').checked){
+        console.log(event);
+        $('#top-text').classList.add('ocultar')
+    }
+    else{
+        $('#top-text').classList.remove('ocultar')
+    }
+})
+
+//Eliminar texto inferior
+$('#no-bottom-text-checkbox').addEventListener('input', (event)=>{
+    if($('#no-bottom-text-checkbox').checked){
+        console.log(event);
+        $('#bottom-text').classList.add('ocultar')
+    }
+    else{
+        $('#bottom-text').classList.remove('ocultar')
+    }
+})
+
 
 // Alinear texto
-
-let $textLeftAlignButtom = $ ("#text-left-align-button");
-let $textCenterAlignButtom = $ ("#text-center-align-button");
-let $textRightAlignButtom = $ ("#text-right-align-button")
-
-
-$textLeftAlignButtom.addEventListener('click', () => {
-    topText.style.textAlign='left'
-    bottomText.style.textAlign='left'
+$("#text-left-align-button").addEventListener('click', () => {
+    $('#top-text').style.textAlign='left'
+    $('#bottom-text').style.textAlign='left'
 })
-$textCenterAlignButtom.addEventListener('click', () => {
-    topText.style.textAlign='center'
-    bottomText.style.textAlign='center'
+$("#text-center-align-button").addEventListener('click', () => {
+    $('#top-text').style.textAlign='center'
+    $('#bottom-text').style.textAlign='center'
 })
-$textRightAlignButtom.addEventListener('click', () => {
-    topText.style.textAlign='right'
-    bottomText.style.textAlign='right'
+$("#text-right-align-button").addEventListener('click', () => {
+    $('#top-text').style.textAlign='right'
+    $('#bottom-text').style.textAlign='right'
 })
 
 // Cambiar color texto
