@@ -1,6 +1,22 @@
 let $ = (selector) => document.querySelector(selector)
 let $$ = (selector) => document.querySelectorAll(selector)
 
+// ####################### [ HEADER ] ###############################
+//Poner panel texto
+$('#panel-text-button').addEventListener('click', ()=>{
+    if($('.panel-text').classList.contains('ocultar')){
+        $('.panel-text').classList.remove('ocultar');
+    }
+    $('.panel-img').classList.add('ocultar')       
+})
+//Poner panel imagen
+$('#panel-image-button').addEventListener('click',(event) =>{
+    if($('.panel-img').classList.contains('ocultar')){
+        $('.panel-img').classList.remove('ocultar');
+    }
+    $('.panel-text').classList.add('ocultar')
+})
+
 // ####################### [ IMAGEN ] ###############################
 
 
@@ -173,6 +189,8 @@ $("#text-size-input").addEventListener('input',(event)=>{
     $('#top-text').style.fontSize=`${event.target.value}px`;
     $('#bottom-text').style.fontSize=`${event.target.value}px`;
 })
+
+
 
 
 

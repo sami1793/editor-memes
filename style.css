@@ -19,9 +19,6 @@ body.light-theme {
 
 body{
     background-color: var(--color-background);
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
 }
 
 header{
@@ -38,7 +35,7 @@ header{
     flex-direction: column;
     align-items: center;
     gap: 15px;
-}
+    }
 .canvas-meme{
     display: flex;
     flex-direction: column;
@@ -74,4 +71,10 @@ header{
 
 .ocultar{
     display: none;
+}
+
+.panel-oculto{
+    position: fixed;
+    top: 0;
+    right: 0;
 }
