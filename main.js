@@ -27,7 +27,7 @@ $('#claro-oscuro-button').addEventListener('click',(event)=>{
 
 //Insertar Imagen
 $('#url-img-input').addEventListener('input', (event)=>{
-    $('#image-meme').style.backgroundImage=`url("${event.target.value}")`;
+    $('.canvas-meme').style.backgroundImage=`url("${event.target.value}")`;
 })
 
 //Cambiar color fondo
@@ -186,6 +186,14 @@ textBackgroundColorInput.addEventListener('input', (event) =>{
     $('#bottom-text').style.backgroundColor = event.target.value;
 
     textBackgroundColor.innerText = event.target.value;
+})
+
+//Fondo texto transparente
+$('#transparent-background-checkbox').addEventListener('input',(event)=>{
+    if($('#transparent-background-checkbox').checked){
+        $('#top-text').style.background = 'transparent';
+        $('#bottom-text').style.background = 'transparent';
+    }
 })
 
 //Cambiar tamaño texto
