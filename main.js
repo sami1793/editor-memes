@@ -16,6 +16,11 @@ $('#panel-image-button').addEventListener('click',(event) =>{
     }
     $('.panel-text').classList.add('ocultar')
 })
+//Modo claro/oscuro
+$('#claro-oscuro-button').addEventListener('click',(event)=>{
+    $('body').classList.toggle('light-theme');
+    $('body').classList.toggle('dark-theme');
+})
 
 // ####################### [ IMAGEN ] ###############################
 
