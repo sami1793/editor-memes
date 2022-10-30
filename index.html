@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Editor de memes</title>
 </head>
@@ -30,7 +35,7 @@
                 <div id="image-meme"></div>
                 <p id="bottom-text" class="text-meme">BOTTOM TEXT</p>
             </div>
-            <button><i class="fa-solid fa-download"></i> Descargar meme</button>
+            <button id="download-button"><i class="fa-solid fa-download"></i> Descargar meme</button>
         </main>
         <aside class="panel-oculto">
             <!-- *************************************************
@@ -47,16 +52,16 @@
                     <div class="panel-control-columns">
                         <input type="color" id="background-meme-color-input" value="#000000">
                         <span id="background-meme-color">#000000</span>
-                    <div class="panel-control-columns">
-                        <select name="" id="background-meme-select">
-                            <option value="">Ninguno</option>
-                            <option value="">Aclarar</option>
-                            <option value="">Oscurecer</option>
-                            <option value="">Diferencia</option>
-                            <option value="">Luminosidad</option>
-                            <option value="">Multiplicar</option>
-                        </select>
-                    </div>
+                        <div class="panel-control-columns">
+                            <select name="" id="background-meme-select">
+                                <option value="">Ninguno</option>
+                                <option value="">Aclarar</option>
+                                <option value="">Oscurecer</option>
+                                <option value="">Diferencia</option>
+                                <option value="">Luminosidad</option>
+                                <option value="">Multiplicar</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <!-- ****************************(FILTROS)************************************** -->

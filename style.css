@@ -10,6 +10,8 @@ body.dark-theme {
   --color-header: #191e2b;
   --color-background: #30343f;
   --color-panel:#252935;
+  --color-text: #ffffff;
+  --color-slider-track:#5a5d68;
 }
 
 /* ************ MODO CLARO ***************** */
@@ -17,10 +19,14 @@ body.light-theme {
   --color-header: #e0e0e0;
   --color-background: #eeeeee;
   --color-panel: #fafafa;
+  --color-text: #424242;
+  --color-slider-track:#5a5d68;
 }
 
 body {
   background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: 'Libre Franklin', sans-serif;
 }
 
 header {
@@ -108,10 +114,11 @@ section h3 {
 input[type="range"] {
   -webkit-appearance: none;
   /* background: transparent; */
-  background-color: var(--color-header);
+  background-color: var(--color-slider-track);
   border-radius: 20px;
   height: 10px;
   width: 100%;/*para que ocupe todo*/
+  margin: 10px 0px;
 }
 
 input[type=range]:focus {
@@ -127,5 +134,20 @@ input[type="range"]::-webkit-slider-thumb {
   border: 1px solid #ff6666;
   background: #ff8686;
   /* box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.9); */
+}
+
+/* -----ESTILADO BOTONES------------ */
+button{
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 15px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 0.9rem;
+}
+#download-button{
+    border: none;
+    background-color: #ff6666;
+    color: #eeeeee;
+    margin: 10px;
 }
 
