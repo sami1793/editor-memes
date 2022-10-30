@@ -151,6 +151,17 @@ $('#no-bottom-text-checkbox').addEventListener('input', (event)=>{
     }
 })
 
+//Cambiar fuente texto
+$('#text-font-select').addEventListener('change',(event)=>{
+    $('#top-text').style.fontFamily = `${event.target.value}`;
+    $('#bottom-text').style.fontFamily = `${event.target.value}`;
+})
+
+//Cambiar tamaño texto
+$("#text-size-input").addEventListener('input',(event)=>{
+    $('#top-text').style.fontSize=`${event.target.value}px`;
+    $('#bottom-text').style.fontSize=`${event.target.value}px`;
+})
 
 // Alinear texto
 $("#text-left-align-button").addEventListener('click', () => {
@@ -196,12 +207,7 @@ $('#transparent-background-checkbox').addEventListener('input',(event)=>{
     }
 })
 
-//Cambiar tamaño texto
 
-$("#text-size-input").addEventListener('input',(event)=>{
-    $('#top-text').style.fontSize=`${event.target.value}px`;
-    $('#bottom-text').style.fontSize=`${event.target.value}px`;
-})
 
 
 
