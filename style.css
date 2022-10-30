@@ -15,6 +15,7 @@ body.dark-theme{
 body.light-theme {
     --color-header: #e0e0e0;
     --color-background: #eeeeee;
+    --color-panel: #fafafa;
 }
 
 body{
@@ -28,6 +29,7 @@ header{
     padding: 15px;
     gap: 15px;
     background-color: var(--color-header);
+    position: relative;
 }
 
 .meme-container{
@@ -35,6 +37,7 @@ header{
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    margin-bottom: 15px;
     }
 .canvas-meme{
     display: flex;
@@ -74,7 +77,31 @@ header{
 }
 
 .panel-oculto{
-    position: fixed;
+    position:absolute;
     top: 0;
     right: 0;
 }
+/* --------ESTILADO DE PANELES---------------- */
+.panel-oculto > section{
+    padding: 15px;
+    background-color: var(--color-panel);
+}
+section h2{
+    text-align: center;
+}
+section h3{
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+/* -------- Panel imagen------------ */
+.panel-control{
+    margin: 15px;
+}
+.panel-control-columns{
+    display: flex;
+}
+.panel-control-slider > label{
+    display: block;
+    font-size: 0.7rem;
+}
+
