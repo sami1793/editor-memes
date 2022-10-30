@@ -205,6 +205,10 @@ $('#transparent-background-checkbox').addEventListener('input',(event)=>{
         $('#top-text').style.background = 'transparent';
         $('#bottom-text').style.background = 'transparent';
     }
+    else{
+        $('#top-text').style.background = $('#text-background-color-input').value;
+        $('#bottom-text').style.background = $('#text-background-color-input').value;
+    }
 })
 
 
