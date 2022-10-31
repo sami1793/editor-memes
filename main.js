@@ -27,7 +27,7 @@ $('#claro-oscuro-button').addEventListener('click',(event)=>{
 
 //Insertar Imagen
 $('#url-img-input').addEventListener('input', (event)=>{
-    $('.canvas-meme').style.backgroundImage=`url("${event.target.value}")`;
+    $('#image-meme').style.backgroundImage=`url("${event.target.value}")`;
 })
 
 //Cambiar color fondo
@@ -202,15 +202,39 @@ textBackgroundColorInput.addEventListener('input', (event) =>{
 //Fondo texto transparente
 $('#transparent-background-checkbox').addEventListener('input',(event)=>{
     if($('#transparent-background-checkbox').checked){
-        $('#top-text').style.background = 'transparent';
-        $('#bottom-text').style.background = 'transparent';
+        $('#top-text').style.position = "absolute";
+        $('#top-text').style.background = "transparent";
+        $('#top-text').style.width = "610px";
+
+        $('#bottom-text').style.position = "absolute";  
+        $('#bottom-text').style.background = "transparent";
+        $('#bottom-text').style.width = "610px";
+        $('#bottom-text').style.bottom = "33px"
     }
     else{
         $('#top-text').style.background = $('#text-background-color-input').value;
+        $('#top-text').style.color = $('#text-color-input').value;
+
         $('#bottom-text').style.background = $('#text-background-color-input').value;
+        $('#bottom-text').style.color = $('#text-color-input').value;
+
+        $('#top-text').style.position = "static";
+        $('#bottom-text').style.position = "static";  
     }
 })
 
+// #################### DESCARGA ########################
+
+const descargarMeme = () => {
+    domtoimage.toBlob($('.canvas-meme')).then(function (blob) {
+        saveAs(blob, 'mi-meme.png');
+    });
+}
+const inicializar = () => {
+    $('#download-button').addEventListener('click', descargarMeme)
+}
+
+window.onload = inicializar
 
 
 
