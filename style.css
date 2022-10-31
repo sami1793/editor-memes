@@ -151,4 +151,21 @@ button{
     margin: 10px;
 }
 
+/* ---------Boton cerrar paneles-------------- */
+.panel-close-button{
+    position: absolute;
+    right: 0;
+    margin: 5px;
+    border:none;
+    background-color: transparent;
+    color: var(--color-text);
+}
+
+/************** RESPONSIVE ***************** */
+@media (max-width: 700px) {
+    .panel-oculto {
+      width: 100%;
+    }
+  }
+
 

@@ -4,6 +4,7 @@ let $$ = (selector) => document.querySelectorAll(selector)
 // ####################### [ HEADER ] ###############################
 //Poner panel texto
 $('#panel-text-button').addEventListener('click', ()=>{
+    $('.panel-oculto').classList.remove('ocultar')
     if($('.panel-text').classList.contains('ocultar')){
         $('.panel-text').classList.remove('ocultar');
     }
@@ -11,6 +12,7 @@ $('#panel-text-button').addEventListener('click', ()=>{
 })
 //Poner panel imagen
 $('#panel-image-button').addEventListener('click',(event) =>{
+    $('.panel-oculto').classList.remove('ocultar')
     if($('.panel-img').classList.contains('ocultar')){
         $('.panel-img').classList.remove('ocultar');
     }
@@ -221,6 +223,11 @@ $('#transparent-background-checkbox').addEventListener('input',(event)=>{
         $('#top-text').style.position = "static";
         $('#bottom-text').style.position = "static";  
     }
+})
+
+// CERRAR PANELES
+$('.panel-close-button').addEventListener('click', ()=>{
+    $('.panel-oculto').classList.add('ocultar')
 })
 
 // #################### DESCARGA ########################
