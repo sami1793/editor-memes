@@ -60,6 +60,7 @@ header {
 #image-meme {
   width: 100%;
   height: 100%; /* flex-grow: 1; */
+  background-size: 100%;/*se achique segun pantalla*/
 }
 
 .text-meme {
@@ -166,6 +167,12 @@ button{
     .panel-oculto {
       width: 100%;
     }
+    .meme-container{
+        width: auto;
+        height: auto;
+        margin: 5px;
+    }
+    
   }
 
 
