@@ -206,12 +206,10 @@ $('#transparent-background-checkbox').addEventListener('input',(event)=>{
     if($('#transparent-background-checkbox').checked){
         $('#top-text').style.position = "absolute";
         $('#top-text').style.background = "transparent";
-        $('#top-text').style.width = "610px";
 
         $('#bottom-text').style.position = "absolute";  
-        $('#bottom-text').style.background = "transparent";
-        $('#bottom-text').style.width = "610px";
-        $('#bottom-text').style.bottom = "33px"
+        $('#bottom-text').style.background = "transparent"; 
+        $('#bottom-text').style.bottom = "0";
     }
     else{
         $('#top-text').style.background = $('#text-background-color-input').value;
