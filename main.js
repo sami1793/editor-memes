@@ -242,6 +242,12 @@ $('#contorno-dark-button').addEventListener('click',()=>{
     1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000`
 })
 
+//Espaciado
+$('#espaciado-input').addEventListener('input',(event)=>{
+    $('#top-text').style.padding = `${event.target.value}px`
+    $('#bottom-text').style.padding = `${event.target.value}px`
+})
+
 // CERRAR PANELES
 $('.panel-close-button').addEventListener('click', ()=>{
     $('.panel-oculto').classList.add('ocultar')
