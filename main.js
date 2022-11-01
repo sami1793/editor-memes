@@ -222,6 +222,25 @@ $('#transparent-background-checkbox').addEventListener('input',(event)=>{
         $('#bottom-text').style.position = "static";  
     }
 })
+//Sin contorno
+$('#contorno-none-button').addEventListener('click',()=>{
+    $('#top-text').style.textShadow=`none`
+    $('#bottom-text').style.textShadow=`none`
+})
+//Contorno claro
+$('#contorno-light-button').addEventListener('click',()=>{
+    $('#top-text').style.textShadow=`2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+    1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff`
+    $('#bottom-text').style.textShadow=`2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+    1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff`
+})
+//Contorno oscuro
+$('#contorno-dark-button').addEventListener('click',()=>{
+    $('#top-text').style.textShadow=`2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+    1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000`
+    $('#bottom-text').style.textShadow=`2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+    1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000`
+})
 
 // CERRAR PANELES
 $('.panel-close-button').addEventListener('click', ()=>{
