@@ -56,12 +56,13 @@ header {
   width: 100%;/* si no lo pongo queda del tamaño del texto */
   max-width: 610px;
   max-height: 610px;
+  height: 100vw;
   position: relative;/*para que funcione el width del hijo*/
 }
 
 #image-meme {
   width: 100%;
-  height: 100vw;
+  height: 100%;
   background-size:cover;
 }
 
