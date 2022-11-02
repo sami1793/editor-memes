@@ -256,6 +256,12 @@ $('#espaciado-input').addEventListener('input',(event)=>{
     $('#bottom-text').style.padding = `${event.target.value}px`
 })
 
+//Interlineado
+$('#interlineado-button').addEventListener('change', (event)=>{
+    $('#top-text').style.lineHeight = event.target.value;
+    $('#bottom-text').style.lineHeight = event.target.value;
+})
+
 // CERRAR PANELES
 $('.panel-close-button').addEventListener('click', ()=>{
     $('.panel-oculto').classList.add('ocultar')
