@@ -55,7 +55,6 @@ header {
   background-color: black;
   width: 100%;/* si no lo pongo queda del tamaño del texto */
   max-width: 610px;
-  height: 100vw;
   max-height: 610px;
   position: relative;/*para que funcione el width del hijo*/
 }
@@ -63,7 +62,7 @@ header {
 #image-meme {
   width: 100%;
   height: 100vw;
-  background-size:100%;
+  background-size:cover;
 }
 
 .text-meme {
@@ -174,7 +173,7 @@ button{
       width: 100%;
     }
     .meme-container{
-        margin: 5px;
+        margin: 10px;
     }
     
   }
