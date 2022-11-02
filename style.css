@@ -12,6 +12,8 @@ body.dark-theme {
   --color-panel:#252935;
   --color-text: #ffffff;
   --color-slider-track:#5a5d68;
+  --color-bg-btn:#3e3e52;
+  --color-btn: #fafafa;
 }
 
 /* ************ MODO CLARO ***************** */
@@ -146,6 +148,8 @@ button{
     border-radius: 15px;
     font-family: 'Roboto Slab', serif;
     font-size: 0.9rem;
+    background-color: var(--color-bg-btn);
+    color: var(--color-btn);
 }
 #download-button{
     border: none;
@@ -173,6 +177,13 @@ button{
         width: auto;
         height: auto;
         margin: 5px;
+    }
+    
+  }
+  @media (max-width: 350px) {
+    .text-meme{
+        font-size: 1em;
+        padding: 1%;
     }
     
   }

@@ -19,9 +19,17 @@ $('#panel-image-button').addEventListener('click',(event) =>{
     $('.panel-text').classList.add('ocultar')
 })
 //Modo claro/oscuro
-$('#claro-oscuro-button').addEventListener('click',(event)=>{
-    $('body').classList.toggle('light-theme');
-    $('body').classList.toggle('dark-theme');
+$('#oscuro-button').addEventListener('click',(event)=>{
+    document.body.classList.remove('light-theme')
+    document.body.classList.add('dark-theme')
+    $('#oscuro-button').classList.toggle('ocultar')
+    $('#claro-button').classList.toggle('ocultar')    
+})
+$('#claro-button').addEventListener('click',(event)=>{
+    document.body.classList.add('light-theme')
+    document.body.classList.remove('dark-theme')
+    $('#claro-button').classList.toggle('ocultar')
+    $('#oscuro-button').classList.toggle('ocultar')    
 })
 
 // ####################### [ IMAGEN ] ###############################
