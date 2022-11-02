@@ -34,7 +34,6 @@ $('#claro-button').addEventListener('click',(event)=>{
 
 // ####################### [ IMAGEN ] ###############################
 
-
 //Insertar Imagen
 $('#url-img-input').addEventListener('input', (event)=>{
     $('#image-meme').style.backgroundImage=`url("${event.target.value}")`;
@@ -44,6 +43,11 @@ $('#url-img-input').addEventListener('input', (event)=>{
 $('#background-meme-color-input').addEventListener('input', (event)=>{
     $('#image-meme').style.backgroundColor=event.target.value;
     $('#background-meme-color').innerText = event.target.value;
+})
+
+//Cambiar mezcla
+$('#background-meme-select').addEventListener('input', (event) =>{
+    $('#image-meme').style.backgroundBlendMode = event.target.value;
 })
 
 // -------------(FILTROS)-------------------
