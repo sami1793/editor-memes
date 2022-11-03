@@ -48,7 +48,7 @@
         <aside class="panel-oculto">
             <button class="panel-close-button" id="panel-close-button">
                 <i class="fas fa-times"></i>
-              </button>
+            </button>
             <!-- *************************************************
                                     IMG PANEL
             ****************************************************** -->
@@ -61,8 +61,10 @@
                 <div class="panel-control">
                     <h3>FONDO</h3>
                     <div class="panel-control-columns">
-                        <input type="color" id="background-meme-color-input" value="#000000">
-                        <span id="background-meme-color">#000000</span>
+                        <div class="container-color">
+                            <input type="color" id="background-meme-color-input" value="#000000">
+                            <span id="background-meme-color">#000000</span>
+                        </div>
                         <div class="panel-control-columns">
                             <select name="" id="background-meme-select">
                                 <option value="unset">Ninguno</option>
@@ -140,6 +142,7 @@
                 </div>
                 <div class="panel-control">
                     <h3>FUENTE</h3>
+
                     <select name="font-family" id="text-font-select">
                         <option value="Arial">Arial</option>
                         <option value="Arial Black">Arial Black</option>
@@ -151,23 +154,34 @@
                         <option value="Verdana">Verdana</option>
                         <option value="Times New Roman">Times New Roman</option>
                     </select>
-                    <input type="number" id="text-size-input" min="12" max="100" value="38">
-                    <div>
-                        <button id="text-left-align-button"><i class="fa-solid fa-align-left"></i></button>
-                        <button id="text-center-align-button"><i class="fa-solid fa-align-center"></i></button>
-                        <button id="text-right-align-button"><i class="fa-solid fa-align-right"></i></button>
+                    <div class="panel-control-columns">
+                        <input type="number" id="text-size-input" min="12" max="100" value="38">
+
+                        <div class="container-buttons">
+                            <button id="text-left-align-button"><i class="fa-solid fa-align-left"></i></button>
+                            <button id="text-center-align-button"><i class="fa-solid fa-align-center"></i></button>
+                            <button id="text-right-align-button"><i class="fa-solid fa-align-right"></i></button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- ******************COLOR************************* -->
                 <div class="panel-control">
-                    <div>
-                        <h3>COLOR</h3>
-                        <input type="color" id="text-color-input" value="#000000">
-                        <span id="text-color">#000000</span>
-                        <h3>FONDO</h3>
-                        <input type="color" id="text-background-color-input" value="#FFFFFF">
-                        <span id="text-background-color">#FFFFFF</span>
+                    <div class="container-colores">
+                        <div>
+                            <h3>COLOR</h3>
+                            <div class="container-color">
+                                <input type="color" id="text-color-input" value="#000000">
+                                <span id="text-color">#000000</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>FONDO</h3>
+                            <div class="container-color">
+                                <input type="color" id="text-background-color-input" value="#FFFFFF">
+                                <span id="text-background-color">#FFFFFF</span>
+                            </div>
+                        </div>
                     </div>
                     <div>
                         <input type="checkbox" id="transparent-background-checkbox">
