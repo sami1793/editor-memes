@@ -14,4 +14,4 @@ Una vez editada la imagen, esta se puede *descargar*.
 ## Deploy 🚀
 En el siguiente enlace podes comenzar a crear tus memes 🙌🏼:
 
-👉🏼 [Generador de memes](https://sami1793.github.io/portfolio/)
+👉🏼 [Generador de memes](https://sami1793.github.io/editor-memes/)
